@@ -1,9 +1,17 @@
 import './App.css';
 
+// .: Components
+import CompanieCard from './components/CompanieCard'
+
 function App() {
   return (
-    <div className="App mt-50px">
-      <h1 className='text-xl font-bold'>Companies CMS</h1>
+    <div className="flex justify-center text-center mt-50px">
+      <div className=''>
+        <div className='mb-2'>
+          <h3 className=' text-center text-2xl'>Companies CMS</h3>
+        </div>
+        <CompanieCard />
+      </div>
     </div>
   );
 }
