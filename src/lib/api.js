@@ -4,13 +4,13 @@ const BASE_URL = 'http://localhost:3002'
 export const getCompanies = async () => {
     const response = await fetch(`${BASE_URL}/companies`)
     const json = await response.json()
-    return json.data.companies
+    return json
 }
 
-export const getCompaniesById = async () => {
+export const getCompaniesById = async (id) => {
     const response = await fetch(`${BASE_URL}/companies/${id}`)
     const json = await response.json()
-    return json.data.companies
+    return json
 }
 
 export const addCompany = async (companyData) => {

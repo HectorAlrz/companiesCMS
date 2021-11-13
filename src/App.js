@@ -30,7 +30,7 @@ function App() {
             <Routes>
               <Route path='/' element={<CompanieList />} />
               <Route path='AddCompanie' element={<AddCompanie />} />
-              <Route path='CompanieInfo' element={<CompanieInfo />} />
+              <Route path='/CompanieInfo/:id' element={<CompanieInfo />} />
             </Routes>
         </div>
       </Router>
