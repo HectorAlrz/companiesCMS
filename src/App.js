@@ -1,18 +1,39 @@
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom"
 
 // .: Components
-import CompanieCard from './components/CompanieCard'
+import AddCompanie from './Pages/AddCompanie';
+import CompanieList from './Pages/CompanieList';
+import CompanieInfo from './Pages/CompanieInfo'
 
 function App() {
   return (
-    <div className="flex justify-center text-center mt-50px">
-      <div className=''>
-        <div className='mb-2'>
-          <h3 className=' text-center text-2xl'>Companies CMS</h3>
+    <>
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/AddCompanie">About</Link>
+              </li>
+            </ul>
+          </nav>
+            <Routes>
+              <Route path='/' element={<CompanieList />} />
+              <Route path='AddCompanie' element={<AddCompanie />} />
+              <Route path='/CompanieInfo/:id' element={<CompanieInfo />} />
+            </Routes>
         </div>
-        <CompanieCard />
-      </div>
-    </div>
+      </Router>
+    </>
   );
 }
 

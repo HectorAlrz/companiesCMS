@@ -76,6 +76,7 @@ module.exports = {
         '41px': '2.56rem',
         '70px': '4.37rem',
         '90px': '5.62rem',
+        '100px': '6.25rem',
         '676px': '42.188rem',
         '100%': '100%'
       },
@@ -102,5 +103,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms')
+  ],
 }
