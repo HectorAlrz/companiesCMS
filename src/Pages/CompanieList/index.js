@@ -35,7 +35,7 @@ export default function CompanieList() {
                             <Link to={`/CompanieInfo/${_id}`}>
                                 <CompanieCard
                                     title={name}
-                                    key={_id}
+                                    Key={_id}
                                     resume={description}
                                     image={logo_url}
                                 />

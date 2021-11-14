@@ -14,7 +14,7 @@ export default function CompanieInfo() {
             console.log('info', result.data.companie)
             setInfo(result.data.companie)
         }
-        fetchData(id)
+        fetchData()
     }, [])
 
      return (
