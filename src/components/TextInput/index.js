@@ -20,7 +20,7 @@ const TextInput = ({ label, ...props }) => {
         {...props}
       />
       {(meta.touched && meta.error) && (
-        <div className='top-12 mt-1 text-white bg-red-500 text-center rounded'>{meta.error}</div>
+        <div className='w-280px lg:w-full top-12 mt-1 text-white bg-red-500 text-center rounded'>{meta.error}</div>
       )}
     </div>
     </>

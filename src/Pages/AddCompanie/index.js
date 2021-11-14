@@ -1,17 +1,44 @@
 import React, { useState } from "react";
 import { Formik, Form } from 'formik'
-import * as Yup from 'yup'
+import {  useNavigate } from 'react-router-dom'
+import {addCompany} from '../../lib/api'
+
 import { companySchema } from "../../lib/validations";
 
-import DataInput from "../../components/DataInput";
+import DataInput from "../../components/DataInput"
 import TextInput from "../../components/TextInput"
+
+
 export default function AddCompanie() {
+    const [falsePop, setFalsePop] = useState(false)
+    const navigate = useNavigate()
+    const newCompanieHandler = async (values) => {
+        try {
+            console.log(values)
+            if (values) {
+              const response = await addCompany(values)
+              const success = response.success
+              if (success) {
+                navigate('/')
+              } else {
+                setFalsePop(true)
+              }
+            } else throw new Error()
+          } catch (error) { console.log((error.message)) }
+        }
 
     return (
         <>
             <div className="flex justify-center text-left mt-10px">
                 <div className='border-2 border-gray-400 p-4 rounded-md mb-5 shadow-inner'>
                     <h3 >Create a New Company</h3>
+                    {
+                falsePop ?
+                <div className='flex justify-center text-red-800  bg-red-200 text-center rounded p-1 w-280px md:w-408px lg:w-539px'>
+                  <p>The company already exist</p>
+                </div>
+                : null
+              }
                     <Formik
                         // .: form model formik
                         initialValues={{
@@ -30,7 +57,7 @@ export default function AddCompanie() {
                             setTimeout(() => {
                                 alert(JSON.stringify(values, null, 2))
                                 setSubmitting(false)
-
+                                newCompanieHandler(values)
                             }, 400)
                         }}
                     >
@@ -43,7 +70,7 @@ export default function AddCompanie() {
                                 />
                             </div>
                             <div className='flex flex-col lg:flex-row content-center'>
-                                <div className=' justify-center flex-col mr-5'>
+                                <div className='flex justify-center flex-col mr-5'>
                                     <DataInput
                                         label='Company Website URL'
                                         name='url'
@@ -60,7 +87,7 @@ export default function AddCompanie() {
                                         type='text'
                                     />
                                 </div>
-                                <div className=' justify-evenly flex-col'>
+                                <div className='flex justify-center flex-col'>
                                     <DataInput
                                         label='Email Adress'
                                         name='email'
