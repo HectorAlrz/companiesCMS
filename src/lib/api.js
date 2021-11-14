@@ -1,5 +1,5 @@
-//const BASE_URL = ''
-const BASE_URL = 'http://localhost:3002'
+const BASE_URL = 'cms-api-test-proud-jaguar-cf.mybluemix.net'
+//const BASE_URL = 'http://localhost:3002'
 
 export const getCompanies = async () => {
     const response = await fetch(`${BASE_URL}/companies`)
