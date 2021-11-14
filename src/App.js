@@ -15,16 +15,10 @@ function App() {
   return (
     <>
       <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/AddCompanie">About</Link>
-              </li>
-            </ul>
+        <div className='flexflex-col justify-center '>
+          <nav className='flex items-center justify-center flex-wrap p-6'>
+            <Link className="inline-block border border-blue-500 rounded py-1 px-3 mr-3 bg-blue-500 text-white" to="/">Home</Link>
+            <Link className="inline-block border border-blue-500 rounded py-1 px-3 mr-3 bg-blue-500 text-white" to="/addCompanie">Add Company</Link>
           </nav>
             <Routes>
               <Route path='/' element={<CompanieList />} />
