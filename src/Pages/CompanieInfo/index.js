@@ -67,7 +67,7 @@ export default function CompanieInfo() {
                                         <path fill="#0076b2" d="M116 3H12a8.91 8.91 0 00-9 8.8v104.42a8.91 8.91 0 009 8.78h104a8.93 8.93 0 009-8.81V11.77A8.93 8.93 0 00116 3z"></path><path fill="#fff" d="M21.06 48.73h18.11V107H21.06zm9.06-29a10.5 10.5 0 11-10.5 10.49 10.5 10.5 0 0110.5-10.49M50.53 48.73h17.36v8h.24c2.42-4.58 8.32-9.41 17.13-9.41C103.6 47.28 107 59.35 107 75v32H88.89V78.65c0-6.75-.12-15.44-9.41-15.44s-10.87 7.36-10.87 15V107H50.53z"></path>
                                     </svg>
                                 </div>
-                                <a className='hover:text-blue-800 underline' href={linkedin_url}>{linkedin_url}</a>
+                                <a className='hover:text-blue-800 underline' href={linkedin_url}>{`@linkedin/${name}`}</a>
                             </li>
                             <li className='flex p-3 h-8' >
                                 <div className='flex mr-2'>
@@ -75,7 +75,7 @@ export default function CompanieInfo() {
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                     </svg>
                                 </div>
-                                <a className='hover:text-blue-800 underline' href={crunchbase_url}>{crunchbase_url}</a>
+                                <a className='hover:text-blue-800 underline' href={crunchbase_url}>{`crunchbase/${name}`}</a>
                             </li>
                         </ul>
                     </div>
