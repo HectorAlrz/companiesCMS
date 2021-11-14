@@ -14,9 +14,11 @@ export default function CompanieList() {
 
     useEffect(() => {
         async function fetchData() {
+            try{
             const result = await getCompanies()
             setCompanieCards(result.data.companies)
             console.log('companies', result.data.companies)
+            } catch(error){console.log('error',error.message)}
         }
         fetchData()
     }, [])
