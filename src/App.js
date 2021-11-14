@@ -4,7 +4,6 @@ import {
   Routes,
   Route,
   Link,
-  BrowserRouter
 } from "react-router-dom"
 
 // .: Components
