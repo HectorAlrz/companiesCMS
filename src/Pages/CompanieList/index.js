@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import {
-    BrowserRouter as Router,
     Link,
 } from "react-router-dom"
 
@@ -18,7 +17,6 @@ export default function CompanieList() {
             const result = await getCompanies()
             setCompanieCards(result.data.companies)
             console.log('companies', result.data.companies)
-            console.log('estado', companieCards)
         }
         fetchData()
     }, [])
