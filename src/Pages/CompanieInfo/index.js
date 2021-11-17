@@ -19,13 +19,15 @@ export default function CompanieInfo() {
 
      return (
         <div className="flex justify-center text-center mt-50px p-2">
-            <div className='text-center border-2 border-gray-300 rounded shadow-2xl w-full sm:w-539px mx-4'>
+            <div className='text-center border-2 border-gray-200 rounded-lg shadow-2xl w-full sm:w-539px mx-4'>
                 <div>
 
-                        <div className='flex items-center justify-evenly mr-2'>
+                        <div className='flex md:flex-row md:max-w-xl items-center p-1'>
+                            
                           <img className='object-cover w-100px h-100px m-2' src={logo_url} alt='img' />
-                          <div className='flex flex-col mt-4 sm:m-0'>
-                            <h1 className='text-left text-2xl mt-1'>{name}</h1>
+
+                          <div className='p-2 flex flex-col justify-between leading-normal'>
+                            <h1 className='text-left text-2xl sm:mb-1'>{name}</h1>
                             <p className='text-xs text-left'>{description}</p>
                           </div>
                         </div>
