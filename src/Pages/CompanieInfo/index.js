@@ -18,26 +18,25 @@ export default function CompanieInfo() {
     }, [])
 
      return (
-        <div className="flex justify-center text-center mt-50px">
-
-            <div className='text-center border-2 border-black rounded shadow-2xl w-280px sm:w-539px'>
+        <div className="flex justify-center text-center mt-50px p-2">
+            <div className='text-center border-2 border-gray-300 rounded shadow-2xl w-full sm:w-539px mx-4'>
                 <div>
-                    <div className='flex flex-wrap sm:flex-nowrap justify-center sm:justify-between   p-2 sm:p-3'>
 
-                        <div className='flex justify-center mr-2'>
-                            <img className='object-fit border-2 w-100px h-100px ' src={logo_url} alt='img' />
+                        <div className='flex items-center justify-evenly mr-2'>
+                          <img className='object-cover w-100px h-100px m-2' src={logo_url} alt='img' />
+                          <div className='flex flex-col mt-4 sm:m-0'>
+                            <h1 className='text-left text-2xl mt-1'>{name}</h1>
+                            <p className='text-xs text-left'>{description}</p>
+                          </div>
                         </div>
 
-                        <div className='flex flex-col justify-between content-center sm:w-392px '>
-                            <h1 className='text-center sm:text-left text-3xl pb-1'>{name}</h1>
-                            <p className='text-xs sm:text-left'>{description}</p>
-                        </div>
-
-                    </div>
 
                     <div className='flex justify-start mb-2'>
                         <ul className='flex flex-col text-xs text-center italic'>
-                            <li className='flex p-3 h-8' >
+                            {!url 
+                            ?
+                            <li></li>
+                            :                            <li className='flex p-3 h-8' >
                                 <div className='flex mr-2'>
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -45,6 +44,11 @@ export default function CompanieInfo() {
                                 </div>
                                 <a className='hover:text-blue-800 underline' href={url}>{url}</a>
                             </li>
+                            }
+                            {!twitter_url
+                            ?
+                            <li></li>
+                            :
                             <li className='flex p-3 h-8' >
                                 <div className='flex mr-2'>
                                     <svg viewBox="0 0 128 128" className="h-5 w-5">
@@ -52,7 +56,12 @@ export default function CompanieInfo() {
                                     </svg>
                                 </div>
                                 <a className='hover:text-blue-800 underline' href={twitter_url}>{twitter_url}</a>
-                            </li>
+                            </li >
+                            }
+                            {!email
+                            ?
+                            null
+                            :
                             <li className='flex p-3 h-8' >
                                 <div className='flex mr-2'>
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -61,6 +70,11 @@ export default function CompanieInfo() {
                                 </div>
                                 <a className='hover:text-blue-800 unerline' href='https://wwww.gmail.com'>{email}</a>
                             </li>
+                            }
+                            {!linkedin_url
+                            ?
+                            null
+                            :
                             <li className='flex p-3 h-8' >
                                 <div className='flex mr-2'>
                                     <svg viewBox="0 0 128 128" className="h-5 w-5">
@@ -69,6 +83,9 @@ export default function CompanieInfo() {
                                 </div>
                                 <a className='hover:text-blue-800 underline' href={linkedin_url}>{`@linkedin/${name}`}</a>
                             </li>
+                            }
+                            {crunchbase_url
+                            ?
                             <li className='flex p-3 h-8' >
                                 <div className='flex mr-2'>
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -77,6 +94,9 @@ export default function CompanieInfo() {
                                 </div>
                                 <a className='hover:text-blue-800 underline' href={crunchbase_url}>{`crunchbase/${name}`}</a>
                             </li>
+                            :
+                            null
+                        }
                         </ul>
                     </div>
                 </div>
