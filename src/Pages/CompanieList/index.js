@@ -45,11 +45,13 @@ export default function CompanieList() {
                         )
                     })
                 }
+                <div className='flex justify-end mr-1 mb-10px'>
                 <Link to="/AddCompanie">
                 <button type='submit' className='flex flex-end bg-blue-400   p-1 h-30px mb-1 bg-plover-blue hover:bg-blue-700 text-white text-md font-normal rounded'>
                     Add  Company           
                 </button>
                 </Link>
+                </div>
             </div>
         </div>
     )
